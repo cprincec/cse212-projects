@@ -1,8 +1,12 @@
-public static class ArraysTester {
+using System.Drawing;
+
+public static class ArraysTester
+{
     /// <summary>
     /// Entry point for the tests
     /// </summary>
-    public static void Run() {
+    public static void Run()
+    {
         // Sample Test Cases (may not be comprehensive)
         Console.WriteLine("\n=========== PROBLEM 1 TESTS ===========");
         double[] multiples = MultiplesOf(7, 5);
@@ -39,9 +43,29 @@ public static class ArraysTester {
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return new double[0]; // replace this return statement with your own
+        // STEP 1
+        // Declare an array of size 'length' of type double for storing the multiples
+        double[] multiples = new double[length];
+
+        // STEP 2
+        // Write a for loop that runs 'length' times starting from 1.
+        for (int i = 0; i < length; i++)
+        {
+            // STEP 3
+            // For each iteration of the loop, multiply 'number' by the iterator 
+            // (Begin multiplying with 1)
+            double result = number * (i + 1);
+
+            // STEP 4
+            // For each iteration, assign the result of the multiplication to the array declared in STEP 1.
+            multiples[i] = result;
+        }
+
+        // STEP 5 
+        // return the list
+        return multiples;
     }
-    
+
     /// <summary>
     /// Rotate the 'data' to the right by the 'amount'.  For example, if the data is 
     /// <c>&lt;List&gt;{1, 2, 3, 4, 5, 6, 7, 8, 9}</c> and an amount is 3 then the list returned should be 
@@ -57,5 +81,14 @@ public static class ArraysTester {
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
+        // STEP 1
+        // Starting from position 'amount', remove 'amount' number of element(s) from 'data' 
+        // and store them in a new list
+        List<int> extractedNums = data.GetRange(data.Count - amount, amount);
+        data.RemoveRange(data.Count - amount, amount);
+
+        // STEP 2
+        // Add the elements in the new list to 'data' starting from index 0.
+        data.InsertRange(0, extractedNums);
     }
 }
