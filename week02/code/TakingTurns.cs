@@ -1,5 +1,7 @@
-﻿public static class TakingTurns {
-    public static void Test() {
+﻿public static class TakingTurns
+{
+    public static void Test()
+    {
         // TODO Problem 1 - Run test cases and fix the code to match requirements
         // Test Cases
 
@@ -12,10 +14,15 @@
         players.AddPerson("Bob", 2);
         players.AddPerson("Tim", 5);
         players.AddPerson("Sue", 3);
-        // Console.WriteLine(players);    // This can be un-commented out for debug help
+        Console.WriteLine("My print out", players);    // This can be un-commented out for debug help
         while (players.Length > 0)
             players.GetNextPerson();
-        // Defect(s) Found: 
+        // Defect(s) Found: Each player is printed out for each availbele turn before a new player is printed
+        // instead of having printing the names of players in the queue once then the next player and so on till
+        // a player's turns are exhausted.
+        // Also the person's in the queue are printed based on last in first out. That is the last person added to the queue
+        // is printed till the turns are exhausted before the next to the last person is printed until hist turns ae exhausted and the cycle continues
+
 
         Console.WriteLine("---------");
 
@@ -28,7 +35,8 @@
         players.AddPerson("Bob", 2);
         players.AddPerson("Tim", 5);
         players.AddPerson("Sue", 3);
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++)
+        {
             players.GetNextPerson();
             // Console.WriteLine(players);
         }
@@ -52,7 +60,8 @@
         players.AddPerson("Tim", 0);
         players.AddPerson("Sue", 3);
         // Console.WriteLine(players);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++)
+        {
             players.GetNextPerson();
             // Console.WriteLine(players);
         }
@@ -60,7 +69,7 @@
 
         Console.WriteLine("---------");
 
-         // Test 4
+        // Test 4
         // Scenario: Create a queue with the following people and turns: Tim (Forever), Sue (3)
         // Run 10 times.
         // Expected Result: Tim, Sue, Tim, Sue, Tim, Sue, Tim, Tim, Tim, Tim
@@ -69,7 +78,8 @@
         players.AddPerson("Tim", -3);
         players.AddPerson("Sue", 3);
         // Console.WriteLine(players);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++)
+        {
             players.GetNextPerson();
             // Console.WriteLine(players);
         }
