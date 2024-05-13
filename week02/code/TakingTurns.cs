@@ -14,7 +14,7 @@
         players.AddPerson("Bob", 2);
         players.AddPerson("Tim", 5);
         players.AddPerson("Sue", 3);
-        Console.WriteLine("My print out", players);    // This can be un-commented out for debug help
+        Console.WriteLine(players);    // This can be un-commented out for debug help
         while (players.Length > 0)
             players.GetNextPerson();
         // Defect(s) Found: Each player is printed out for each availbele turn before a new/next player is printed
