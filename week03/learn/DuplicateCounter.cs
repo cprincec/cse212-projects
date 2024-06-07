@@ -24,7 +24,27 @@
 
     private static int CountDuplicates(int[] data)
     {
-        // Add code here.
-        return 0;
+        // Create a duplicate counter variable
+        int totalDuplicates = 0;
+
+        // Create an empty set
+        var uniqueSet = new HashSet<int>();
+
+        // loop through the array and check for already existing elements in data
+        // increment totalDuplicates when there is an already existing element
+        // Else, add the element to the set
+        foreach (int num in data)
+        {
+            if (uniqueSet.Contains(num))
+            {
+                totalDuplicates++;
+            }
+            else
+            {
+                uniqueSet.Add(num);
+            }
+        }
+
+        return totalDuplicates;
     }
 }
